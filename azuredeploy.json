@@ -169,6 +169,7 @@
                 "isXenon": false,
                 "hyperV": false,
                 "siteConfig": {
+                    "alwaysOn": "[if(equals(parameters('webAppPlanChoice'), 'Free Tier'), 'false', 'true')]",
                     "numberOfWorkers": 1,
                     "linuxFxVersion": "DOCKER|toiyabe/cosmoseditor:latest",
                     "acrUseManagedIdentityCreds": false,
@@ -356,7 +357,7 @@
                     "numberOfWorkers": 1,
                     "linuxFxVersion": "DOCKER|toiyabe/cosmospublisher:latest",
                     "acrUseManagedIdentityCreds": false,
-                    "alwaysOn":  "[if(or(equals(parameters('webAppPlanChoice'), 'Basic Tier'), equals(parameters('webAppPlanChoice'), 'Standard Tier')), 'true', 'false')]",
+                    "alwaysOn": "[if(equals(parameters('webAppPlanChoice'), 'Free Tier'), 'false', 'true')]",
                     "http20Enabled": true,
                     "functionAppScaleLimit": 0,
                     "minimumElasticInstanceCount": 0,
